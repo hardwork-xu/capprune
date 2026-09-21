@@ -4,6 +4,7 @@
 
 [English](README.md) · [GitHub](https://github.com/hardwork-xu/capprune) · [CI 运行](https://github.com/hardwork-xu/capprune/actions)
 
+[![CI](https://github.com/hardwork-xu/capprune/actions/workflows/ci.yml/badge.svg)](https://github.com/hardwork-xu/capprune/actions/workflows/ci.yml)
 ![License MIT](https://img.shields.io/badge/license-MIT-blue)
 ![Python 3.12](https://img.shields.io/badge/Python-3.12-blue)
 
@@ -15,7 +16,7 @@
 
 ## 范围与状态
 
-已在 macOS 26.6.2 arm64、Apple M1 Pro、16 GiB、Python 3.12.2、NumPy 2.2.6 / Accelerate 上验证：三条实际执行的搜索路径（`scan`、`blocked`、`pruned`）、API、双语 CLI、离线演示、原子保存与重载、70 项测试、静态/类型检查及包安装。声明支持的 Python 范围为 3.12。由于当时主机没有 Docker，Linux CPU Docker 路径在该主机上**未执行**。首次公开源码包含 GitHub Actions 工作流，当前执行状态见 [CI 运行](https://github.com/hardwork-xu/capprune/actions)，与归档的本地验收证据分别记录。本版本不提供 GPU 后端、在线更新、稀疏向量、嵌入模型或服务层。
+已在 macOS 26.6.2 arm64、Apple M1 Pro、16 GiB、Python 3.12.2、NumPy 2.2.6 / Accelerate 上验证三条搜索路径（`scan`、`blocked`、`pruned`）、API、双语 CLI、离线演示、原子保存与重载、70 项测试及包安装。[Ubuntu 24.04 的 GitHub Actions](https://github.com/hardwork-xu/capprune/actions/runs/35602650743) 也通过了相同的 70 项测试、静态/类型检查、包构建、基准冒烟测试、图表生成及 Docker 构建和运行。声明支持的 Python 范围为 3.12。完整性能测量仍仅来自 macOS，CI 冒烟测试不是 Linux 性能结论。详见[公开发布证据](results/publication.json)。不提供 GPU 后端、在线更新、稀疏向量、嵌入模型或服务层。
 
 算法在实数算术下精确；float64 实现通过保守余量保护，并与扫描基线核对。这不是针对所有对抗性输入及 BLAS 实现的形式化区间算术认证。计算分数相同时，按原始行 ID 升序排列。
 

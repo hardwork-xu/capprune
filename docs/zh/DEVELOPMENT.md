@@ -60,3 +60,7 @@ uv run python scripts/verify.py
 ## 源码包隐私检查
 
 本地包内容审计发现，首次源码分发包包含指向私人本地元数据的 `.git` 控制文件。在 `.gitignore` 明确排除 `.git` 并重新构建后，重复包审计通过。该次原始本地审计期间没有上传任何软件包或源码压缩包。此打包修改不改变已测搜索实现或冻结基准。
+
+## 公开源码与 CI 验证
+
+公开快照 `04ff43063be3cdc353bb0582444742da39be4f6d` 在 Ubuntu 24.04 的 [GitHub Actions](https://github.com/hardwork-xu/capprune/actions/runs/35602650743) 中通过 70 项测试、静态/类型检查、wheel/源码包构建、基准冒烟、分析及 Docker 构建和运行。仓库与 README 的匿名请求均返回 HTTP 200，README 字节与该快照一致。公开提交使用已核验账号的隐私提交身份，没有推送原始私人历史。[机器可读证据](../../results/publication.json)补充说明此次发布，原始本地记录保持不变。

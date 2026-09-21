@@ -60,3 +60,7 @@ In the archived local acceptance run, Docker build/run and remote GitHub Actions
 ## Source-archive privacy check
 
 A local package-content audit found that the source distribution initially included the `.git` control file, which points to private local metadata. Adding an explicit `.git` exclusion to `.gitignore` and rebuilding removed it; the repeated package audit passed. No package or source archive was uploaded during that original local audit. This packaging change does not change the tested search implementation or frozen benchmark.
+
+## Public source and CI verification
+
+Public snapshot `04ff43063be3cdc353bb0582444742da39be4f6d` passed [GitHub Actions](https://github.com/hardwork-xu/capprune/actions/runs/35602650743) on Ubuntu 24.04: 70 tests, static/type checks, wheel/sdist build, benchmark smoke, analysis and Docker build/run. Anonymous repository and README requests returned HTTP 200; README bytes matched that snapshot. The source was published with the verified account’s privacy-preserving commit identity; original private history was not pushed. [Machine-readable evidence](../../results/publication.json) supplements the unchanged historical local records.

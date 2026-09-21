@@ -12,7 +12,7 @@
 
 已检查主机为 Apple M1 Pro、16 GiB 统一内存、arm64 macOS（Darwin 25.6.0），使用 Python 3.12.2、Apple Accelerate 后端的 NumPy 2.2.6、scikit-learn 1.7.2、threadpoolctl 3.6.0 与 psutil 7.1.0。脚本在导入 NumPy 前设置 `VECLIB_MAXIMUM_THREADS=1`、`OPENBLAS_NUM_THREADS=1` 与 `OMP_NUM_THREADS=1`，并进入 `threadpool_limits(1)`，请求单线程。**threadpoolctl 无法内省 Accelerate 实际运行线程数**；记录到 OpenMP 线程数为 1，并不能独立证明 Accelerate 的内部线程数。全部模式处于同一进程并共享同一请求。这是请求单线程的实验，不是实测 CPU 绑定保证。
 
-未使用 GPU 或异步设备路径，因此无需设备同步。Docker 不可用，未执行容器验证。不声称获得 Linux、CUDA、Metal、其他 CPU、远端 CI 或生产部署结果。
+未使用 GPU 或异步设备路径，因此无需设备同步。Docker 不可用，未执行容器验证。这份冻结基准不声称获得 Linux、CUDA、Metal、其他 CPU 或生产部署的性能结果。后续 Linux 正确性、构建及容器验证另见[公开发布证据](../../results/publication.json)。
 
 ## 冻结目标、预期与实测
 

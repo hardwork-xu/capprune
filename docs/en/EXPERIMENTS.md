@@ -12,7 +12,7 @@ The full record is [results/reference.json](../../results/reference.json), run I
 
 The inspected host has an Apple M1 Pro, 16 GiB unified memory, arm64 macOS (Darwin 25.6.0), Python 3.12.2, NumPy 2.2.6 using Apple Accelerate, scikit-learn 1.7.2, threadpoolctl 3.6.0, and psutil 7.1.0. The runner requests one thread by setting `VECLIB_MAXIMUM_THREADS=1`, `OPENBLAS_NUM_THREADS=1`, and `OMP_NUM_THREADS=1` before NumPy import and entering `threadpool_limits(1)`. **Accelerate's actual runtime thread count is not introspectable through threadpoolctl**; the recorded OpenMP count of 1 is not independent proof of Accelerate's internal thread count. All modes share the same request and process. This is a requested single-thread experiment, not a measured CPU-affinity guarantee.
 
-No GPU or asynchronous device path is used, so no device synchronization is needed. Docker was unavailable and container validation was not executed. No result is claimed for Linux, CUDA, Metal, other CPUs, remote CI, or a production deployment.
+No GPU or asynchronous device path is used, so no device synchronization is needed. Docker was unavailable and container validation was not executed. This frozen benchmark makes no performance claim for Linux, CUDA, Metal, other CPUs, or a production deployment. Later Linux correctness/build/container validation is recorded separately in [publication evidence](../../results/publication.json).
 
 ## Frozen target, expectation, and measurement
 

@@ -30,7 +30,7 @@ docker build -t capprune:0.1.0 .
 docker run --rm capprune:0.1.0
 ```
 
-**由于已检查的主机没有可用 Docker，未执行容器验证。** 宿主机验证不能证明 Linux 或容器路径已通过。这是历史本地状态，不代表当前远端 CI 结果。首次公开快照包含 GitHub Actions 工作流；当前状态以[实际运行记录](https://github.com/hardwork-xu/capprune/actions)为准，不根据配置文件存在推断 CI 成功。
+原始 macOS 主机没有 Docker，其本地验收档案保持不变。[公开 Ubuntu 24.04 CI](https://github.com/hardwork-xu/capprune/actions/runs/35602650743) 现已通过全部 70 项测试、静态/类型检查、包构建、基准冒烟、绘图，以及 Docker 构建和容器演示。[公开发布证据](../../results/publication.json)记录被验证的公开源码快照。这证明 Linux 执行路径可运行，不是完整 Linux 性能基准结论。
 
 ## 发布说明草稿
 
@@ -48,7 +48,7 @@ macOS 基准在导入 NumPy 前通过 `VECLIB_MAXIMUM_THREADS=1` 请求一个 Ac
 
 **建议 Topics：** `vector-search`、`cosine-similarity`、`branch-and-bound`、`numpy`、`cpu`、`benchmark`、`reproducible-research`、`python`。
 
-**描述性引用：** CapPrune：基于球冠分块剪枝的精确余弦检索，版本 0.1.0（2026），软件。记录使用的源码 revision 或产物哈希。附公开仓库地址：https://github.com/hardwork-xu/capprune。尚未分配 DOI。由于没有经过核验的公开作者元数据，刻意不生成 `CITATION.cff`。
+**描述性引用：** CapPrune：基于球冠分块剪枝的精确余弦检索，版本 0.1.0（2026），软件。记录使用的源码 revision 或产物哈希。附公开仓库地址：https://github.com/hardwork-xu/capprune。尚未分配 DOI。提供描述性引用而不增加个人作者元数据，不附 `CITATION.cff`。
 
 ## 产物与发布边界
 

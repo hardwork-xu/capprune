@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-21T13:02:21.910194+00:00",
+  "repository": "https://github.com/hardwork-xu/capprune",
+  "visibility": "public",
+  "published_snapshot": "04ff43063be3cdc353bb0582444742da39be4f6d",
+  "source_origin": {
+    "local_revision": "6cddb1e",
+    "history_published": false,
+    "method": "source snapshot; original numerical code and raw evidence preserved"
+  },
+  "anonymous_checks": {
+    "repository_http": 200,
+    "readme_http": 200,
+    "readme_matches_snapshot": true,
+    "readme_sha256": "d2b6cf5359d2265d721cb55cf619add51c27d2e7be1c78d78fb8575a3cc1a6db"
+  },
+  "ci": {
+    "conclusion": "success",
+    "createdAt": "2026-09-21T12:58:16Z",
+    "headSha": "04ff43063be3cdc353bb0582444742da39be4f6d",
+    "jobs": [
+      {
+        "completedAt": "2026-09-21T12:59:00Z",
+        "conclusion": "success",
+        "databaseId": 106342177875,
+        "name": "test",
+        "startedAt": "2026-09-21T12:58:19Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-09-21T12:58:21Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-09-21T12:58:20Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-21T12:58:22Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "startedAt": "2026-09-21T12:58:21Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-21T12:58:22Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "startedAt": "2026-09-21T12:58:22Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-21T12:58:27Z",
+            "conclusion": "success",
+            "name": "Run python -m pip install uv==0.8.22",
+            "number": 4,
+            "startedAt": "2026-09-21T12:58:22Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-21T12:58:29Z",
+            "conclusion": "success",
+            "name": "Run uv sync --frozen",
+            "number": 5,
+            "startedAt": "2026-09-21T12:58:27Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-21T12:58:45Z",
+            "conclusion": "success",
+            "name": "Run make check",
+            "number": 6,
+            "startedAt": "2026-09-21T12:58:29Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-21T12:58:46Z",
+            "conclusion": "success",
+            "name": "Run make build",
+            "number": 7,
+            "startedAt": "2026-09-21T12:58:45Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-21T12:58:47Z",
+            "conclusion": "success",
+            "name": "Run .venv/bin/python benchmark.py --smoke --output work/ci-smoke.json",
+            "number": 8,
+            "startedAt": "2026-09-21T12:58:46Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-21T12:58:47Z",
+            "conclusion": "success",
+            "name": "Run .venv/bin/python scripts/analyze.py work/ci-smoke.json --output-dir work/ci-analysis",
+            "number": 9,
+            "startedAt": "2026-09-21T12:58:47Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-21T12:58:56Z",
+            "conclusion": "success",
+            "name": "Run docker build -t capprune:test .",
+            "number": 10,
+            "startedAt": "2026-09-21T12:58:47Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-21T12:58:57Z",
+            "conclusion": "success",
+            "name": "Run docker run --rm capprune:test",
+            "number": 11,
+            "startedAt": "2026-09-21T12:58:56Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-21T12:58:57Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 21,
+            "startedAt": "2026-09-21T12:58:57Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-21T12:58:57Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 22,
+            "startedAt": "2026-09-21T12:58:57Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-21T12:58:57Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 23,
+            "startedAt": "2026-09-21T12:58:57Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/hardwork-xu/capprune/actions/runs/35602650743/job/106342177875"
+      }
+    ],
+    "updatedAt": "2026-09-21T12:59:01Z",
+    "url": "https://github.com/hardwork-xu/capprune/actions/runs/35602650743"
+  },
+  "test_totals": {
+    "passed": 70,
+    "failed": 0,
+    "skipped": 0
+  },
+  "verified_scope": [
+    "Ubuntu 24.04 Python 3.12",
+    "format and static checks",
+    "type checking",
+    "unit and integration tests",
+    "wheel and sdist build",
+    "benchmark smoke",
+    "plot generation",
+    "Docker build and demo"
+  ],
+  "limits": [
+    "Full performance benchmark remains the original macOS run; CI smoke is not a Linux performance claim.",
+    "Historical local acceptance files are retained unchanged."
+  ]
+}

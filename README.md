@@ -4,6 +4,7 @@
 
 [简体中文](README_zh.md) · [GitHub](https://github.com/hardwork-xu/capprune) · [CI runs](https://github.com/hardwork-xu/capprune/actions)
 
+[![CI](https://github.com/hardwork-xu/capprune/actions/workflows/ci.yml/badge.svg)](https://github.com/hardwork-xu/capprune/actions/workflows/ci.yml)
 ![License MIT](https://img.shields.io/badge/license-MIT-blue)
 ![Python 3.12](https://img.shields.io/badge/Python-3.12-blue)
 
@@ -15,7 +16,7 @@ The contribution is a complete CPU implementation of block construction, conserv
 
 ## Scope and status
 
-Validated locally on macOS 26.6.2 arm64, Apple M1 Pro, 16 GiB, Python 3.12.2, NumPy 2.2.6 / Accelerate: three real search paths (`scan`, `blocked`, `pruned`), API, bilingual CLI, offline demo, atomic save/reload, 70 tests, static/type checks and package installation. Python 3.12 is the declared version range. The Linux CPU Docker path was **not run** on that host because Docker was unavailable. The initial publication includes a GitHub Actions workflow; its current execution status is available in [CI runs](https://github.com/hardwork-xu/capprune/actions), separately from the archived local acceptance evidence. No GPU backend, online updates, sparse vectors, embedding model or service is provided.
+Validated locally on macOS 26.6.2 arm64, Apple M1 Pro, 16 GiB, Python 3.12.2, NumPy 2.2.6 / Accelerate: all three search paths (`scan`, `blocked`, `pruned`), API, bilingual CLI, offline demo, atomic save/reload, 70 tests and package installation. [GitHub Actions on Ubuntu 24.04](https://github.com/hardwork-xu/capprune/actions/runs/35602650743) also passed the same 70-test suite, static/type checks, package build, benchmark smoke, plot generation, and Docker build/run. Python 3.12 is the declared version range. Full performance measurements remain macOS-only; CI smoke is not a Linux performance claim. See [publication evidence](results/publication.json). No GPU backend, online updates, sparse vectors, embedding model or service is provided.
 
 The algorithm is exact in real arithmetic; guarded float64 output is checked against the scan baseline. This is not a formal interval-arithmetic certification for every adversarial input or BLAS implementation. Equal computed scores use ascending original row ID.
 
