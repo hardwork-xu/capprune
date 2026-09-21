@@ -1,0 +1,470 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-21T12:43:35.659679+00:00",
+  "source": {
+    "git_revision": "0f8260de8bd9de459de4d5f63cd86fb81cf08aca",
+    "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e",
+    "files": {
+      "benchmark.py": "0a2666350157dd2a6b9f40c2b0e5cf060488dcaf0e172879911d00c55c270032",
+      "configs/protocol.json": "37051f3d41600e4a67b4ee0c06f1eba2fd4ae4fa1d9a49b30bb4aa081a709acc",
+      "pyproject.toml": "035c976bca82a16585c661cea3378a0d68b263456690992e93588655cf39ce1e",
+      "scripts/analyze.py": "2bc54a802216812be88b417591516eb9920c35548346ced07685cabb51070c4d",
+      "scripts/audit.py": "ad0b488f040d42a3a59df309c02f3ec02bf816a9deeb1949c7b922d00db0d281",
+      "scripts/check_docs.py": "2ba2163f2fc747af00336d0c25a89cafdf088256de309bf9df81cf44186315c1",
+      "scripts/evidence.py": "c1e50bf560713bf95feda81ce9b38ec059b0c21bff8bf14c926de838ad392105",
+      "scripts/validate_results.py": "89361daf46436390c8598980ac9ae4571c9df13be22ac1d33d6ac355ceef791e",
+      "scripts/verify.py": "81fc1885e9e1e681b1db4b798c8f7653b1bd6f02e652f643bb865380e90e8edb",
+      "src/capprune/__init__.py": "85fe786b69b14920e6588beac5bd546b1a8376218972358f6939b0b648b91482",
+      "src/capprune/__main__.py": "18e07a3759ef17ed219358348833ca1f5642833db9b9a05f664197b8db74fae0",
+      "src/capprune/cli.py": "92ad9b3fa4570471d20b908aab9acdf9e200252aacd221169e6b4f0067e22b71",
+      "src/capprune/index.py": "ab0afbaa8ee3d63efc43266b8bee249c00514a41ee8fe19f53088d3ebb850aad",
+      "tests/test_benchmark.py": "a87cb02757441ba88e90569b3c30bf2aa18e9f5d426060db4f87cb667f9a0730",
+      "tests/test_cli.py": "58e11a7b04005a8eb47fab09aa33b2730a4dd83d5eb8db57882858ec00e04ed6",
+      "tests/test_core.py": "7e2bfb3626c76781fad87d47296bbe4ddc1adbbb8c1f83213f64e4c800768726",
+      "uv.lock": "4c2b81039fa0d0abc4cda1f125187d3f7c670b9210463da1d4f671f7b5aa2042"
+    }
+  },
+  "checks": [
+    {
+      "name": "format",
+      "command": [
+        ".venv/bin/ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg"
+      },
+      "duration_seconds": 0.0580473750596866,
+      "summary": "15 files already formatted\n",
+      "log": "results/acceptance/format.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "lint",
+      "command": [
+        ".venv/bin/ruff",
+        "check",
+        "."
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg"
+      },
+      "duration_seconds": 0.016977624967694283,
+      "summary": "All checks passed!\n",
+      "log": "results/acceptance/lint.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "types",
+      "command": [
+        ".venv/bin/mypy"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg"
+      },
+      "duration_seconds": 0.4419750840170309,
+      "summary": "Success: no issues found in 4 source files\n",
+      "log": "results/acceptance/types.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "unit_tests",
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "pytest",
+        "tests/test_core.py",
+        "--junitxml=results/acceptance/unit.xml"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg"
+      },
+      "duration_seconds": 0.46610116597730666,
+      "summary": "============================= test session starts ==============================\nplatform darwin -- Python 3.12.2, pytest-8.4.2, pluggy-1.6.0\nrootdir: <PROJECT>\nconfigfile: pyproject.toml\ncollected 49 items\n\ntests/test_core.py .................................................     [100%]\n\n- generated xml file: <PROJECT>/results/acceptance/unit.xml -\n============================== 49 passed in 0.24s ==============================\n",
+      "log": "results/acceptance/unit_tests.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "integration_tests",
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "pytest",
+        "tests/test_cli.py",
+        "tests/test_benchmark.py",
+        "--junitxml=results/acceptance/integration.xml"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg"
+      },
+      "duration_seconds": 5.669486708007753,
+      "summary": "============================= test session starts ==============================\nplatform darwin -- Python 3.12.2, pytest-8.4.2, pluggy-1.6.0\nrootdir: <PROJECT>\nconfigfile: pyproject.toml\ncollected 21 items\n\ntests/test_cli.py .................                                      [ 80%]\ntests/test_benchmark.py ....                                             [100%]\n\n- generated xml file: <PROJECT>/results/acceptance/integration.xml -\n============================== 21 passed in 5.30s ==============================\n",
+      "log": "results/acceptance/integration_tests.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "default_example",
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "capprune",
+        "demo"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg"
+      },
+      "duration_seconds": 0.12082283408381045,
+      "summary": "157092,\n      0.9184908322959815,\n      0.9182483011969137,\n      0.9148311836619204,\n      0.9141424951532751,\n      0.9140839968747461,\n      0.9124049709934494\n    ],\n    [\n      0.9212920815657615,\n      0.9159943785176778,\n      0.9140651904242614,\n      0.9038214407971012,\n      0.900353562271304,\n      0.8992892678554405,\n      0.898478758831692,\n      0.8934160351589631,\n      0.8908178609942096,\n      0.8903010570626532\n    ],\n    [\n      0.9229262705206444,\n      0.9180246857777574,\n      0.9176659172914516,\n      0.9167007873032802,\n      0.916049885819087,\n      0.9134244150463366,\n      0.9113423495829832,\n      0.9106969973464676,\n      0.9106526581097509,\n      0.9103182714585137\n    ],\n    [\n      0.9160449578908892,\n      0.9158024508836751,\n      0.9069917022991745,\n      0.9064388050903043,\n      0.901772912248662,\n      0.9006884526846102,\n      0.8981342884995209,\n      0.8981269229089266,\n      0.8913939884329829,\n      0.889362946439356\n    ],\n    [\n      0.9034906427870384,\n      0.9030969361487289,\n      0.8903176382669502,\n      0.8883685650307642,\n      0.8871541286513005,\n      0.8860428947725106,\n      0.8851745206131546,\n      0.8839334587908465,\n      0.8834106797132901,\n      0.8807290619997639\n    ],\n    [\n      0.8919950501882621,\n      0.8869597022072409,\n      0.8793634999918012,\n      0.8717940285144893,\n      0.8654796757141752,\n      0.860264974825893,\n      0.8594747050831474,\n      0.8589728628852487,\n      0.8566477805591541,\n      0.8488982570828826\n    ],\n    [\n      0.8912117209881883,\n      0.8889627683595251,\n      0.8764155599123996,\n      0.8703848483684224,\n      0.8692064579508563,\n      0.8690925920928027,\n      0.8687647044542299,\n      0.8675206262554785,\n      0.8673176550119335,\n      0.863900957670654\n    ]\n  ]\n}\n",
+      "log": "results/acceptance/default_example.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "example_script",
+      "command": [
+        ".venv/bin/python",
+        "examples/demo.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg"
+      },
+      "duration_seconds": 0.11294183391146362,
+      "summary": "157092,\n      0.9184908322959815,\n      0.9182483011969137,\n      0.9148311836619204,\n      0.9141424951532751,\n      0.9140839968747461,\n      0.9124049709934494\n    ],\n    [\n      0.9212920815657615,\n      0.9159943785176778,\n      0.9140651904242614,\n      0.9038214407971012,\n      0.900353562271304,\n      0.8992892678554405,\n      0.898478758831692,\n      0.8934160351589631,\n      0.8908178609942096,\n      0.8903010570626532\n    ],\n    [\n      0.9229262705206444,\n      0.9180246857777574,\n      0.9176659172914516,\n      0.9167007873032802,\n      0.916049885819087,\n      0.9134244150463366,\n      0.9113423495829832,\n      0.9106969973464676,\n      0.9106526581097509,\n      0.9103182714585137\n    ],\n    [\n      0.9160449578908892,\n      0.9158024508836751,\n      0.9069917022991745,\n      0.9064388050903043,\n      0.901772912248662,\n      0.9006884526846102,\n      0.8981342884995209,\n      0.8981269229089266,\n      0.8913939884329829,\n      0.889362946439356\n    ],\n    [\n      0.9034906427870384,\n      0.9030969361487289,\n      0.8903176382669502,\n      0.8883685650307642,\n      0.8871541286513005,\n      0.8860428947725106,\n      0.8851745206131546,\n      0.8839334587908465,\n      0.8834106797132901,\n      0.8807290619997639\n    ],\n    [\n      0.8919950501882621,\n      0.8869597022072409,\n      0.8793634999918012,\n      0.8717940285144893,\n      0.8654796757141752,\n      0.860264974825893,\n      0.8594747050831474,\n      0.8589728628852487,\n      0.8566477805591541,\n      0.8488982570828826\n    ],\n    [\n      0.8912117209881883,\n      0.8889627683595251,\n      0.8764155599123996,\n      0.8703848483684224,\n      0.8692064579508563,\n      0.8690925920928027,\n      0.8687647044542299,\n      0.8675206262554785,\n      0.8673176550119335,\n      0.863900957670654\n    ]\n  ]\n}\n",
+      "log": "results/acceptance/example_script.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "public_api",
+      "command": [
+        ".venv/bin/python",
+        "-c",
+        "import numpy as np; from capprune import CapIndex; i=CapIndex.build(np.eye(3), n_clusters=3); assert i.search([1.,0.,0.], k=1).ids.tolist()==[[0]]; print('API passed')"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg"
+      },
+      "duration_seconds": 0.10019116697367281,
+      "summary": "API passed\n",
+      "log": "results/acceptance/public_api.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "benchmark_evidence",
+      "command": [
+        ".venv/bin/python",
+        "scripts/validate_results.py",
+        "results/reference.json"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg"
+      },
+      "duration_seconds": 0.05330633302219212,
+      "summary": "{\"cases\": 7, \"samples\": 5880, \"run_id\": \"140ea5bb-9c95-4e8a-b2ab-17bcde0903ca\"}\n",
+      "log": "results/acceptance/benchmark_evidence.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "analysis",
+      "command": [
+        ".venv/bin/python",
+        "scripts/analyze.py",
+        "results/reference.json"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg"
+      },
+      "duration_seconds": 0.4414258749457076,
+      "summary": "",
+      "log": "results/acceptance/analysis.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "build",
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "build",
+        "--no-isolation"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg"
+      },
+      "duration_seconds": 0.6046265000477433,
+      "summary": "* Getting build dependencies for sdist...\n* Building sdist...\n* Building wheel from sdist\n* Getting build dependencies for wheel...\n* Building wheel...\nSuccessfully built capprune-0.1.0.tar.gz and capprune-0.1.0-py3-none-any.whl\n",
+      "log": "results/acceptance/build.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "docs",
+      "command": [
+        ".venv/bin/python",
+        "scripts/check_docs.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg"
+      },
+      "duration_seconds": 0.16736708406824619,
+      "summary": "22 documents checked; pairs, links and examples valid / 双语对应、链接和示例通过\n",
+      "log": "results/acceptance/docs.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e",
+      "previous_attempts": [
+        {
+          "name": "docs",
+          "command": [
+            ".venv/bin/python",
+            "scripts/check_docs.py"
+          ],
+          "status": "failed",
+          "exit_code": 1,
+          "environment_overrides": {
+            "VECLIB_MAXIMUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "MPLBACKEND": "Agg"
+          },
+          "duration_seconds": 0.04466979193966836,
+          "summary": "Broken / 失效: README.md -> docs/en/EXPERIMENTS.md\nBroken / 失效: README.md -> docs/en/EXPERIMENTS.md\nBroken / 失效: README.md -> docs/en/RESUME.md\nBroken / 失效: README_zh.md -> docs/zh/EXPERIMENTS.md\nBroken / 失效: README_zh.md -> docs/zh/EXPERIMENTS.md\nBroken / 失效: README_zh.md -> docs/zh/RESUME.md\nBroken / 失效: docs/en/DEVELOPMENT.md -> EXPERIMENTS.md\nBroken / 失效: docs/en/RELEASE.md -> EXPERIMENTS.md\nBroken / 失效: docs/en/RESEARCH.md -> EXPERIMENTS.md\nBroken / 失效: docs/en/RESEARCH.md -> EXPERIMENTS.md\nBroken / 失效: docs/en/WALKTHROUGH.md -> EXPERIMENTS.md\nBroken / 失效: docs/zh/DEVELOPMENT.md -> EXPERIMENTS.md\nBroken / 失效: docs/zh/RELEASE.md -> EXPERIMENTS.md\nBroken / 失效: docs/zh/RESEARCH.md -> EXPERIMENTS.md\nBroken / 失效: docs/zh/RESEARCH.md -> EXPERIMENTS.md\nBroken / 失效: docs/zh/WALKTHROUGH.md -> EXPERIMENTS.md\nBroken / 失效: SECURITY.md -> docs/en/EXPERIMENTS.md\nBroken / 失效: SECURITY_zh.md -> docs/zh/EXPERIMENTS.md\n",
+          "log": "results/acceptance/docs.initial.log",
+          "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+        }
+      ]
+    },
+    {
+      "name": "git_diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg"
+      },
+      "duration_seconds": 0.023571499972604215,
+      "summary": "",
+      "log": "results/acceptance/git_diff.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "public_file_audit",
+      "command": [
+        ".venv/bin/python",
+        "scripts/audit.py"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg"
+      },
+      "duration_seconds": 0.3382917499402538,
+      "summary": "{\"status\": \"passed\", \"files\": 65, \"findings\": []}\n",
+      "log": "results/acceptance/public_file_audit.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "clean_install",
+      "command": [
+        "uv",
+        "sync",
+        "--frozen",
+        "--offline",
+        "--no-dev"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg",
+        "UV_PROJECT_ENVIRONMENT": ".verify-venv"
+      },
+      "duration_seconds": 0.11932629102375358,
+      "summary": "Using CPython 3.12.2 interpreter at: <PYTHON_RUNTIME>\nCreating virtual environment at: .verify-venv\nInstalled 3 packages in 20ms\n + capprune==0.1.0 (from file://<PROJECT>)\n + numpy==2.2.6\n + threadpoolctl==3.6.0\n",
+      "log": "results/acceptance/clean_install.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "wheel_install",
+      "command": [
+        "uv",
+        "pip",
+        "install",
+        "--python",
+        ".verify-venv/bin/python",
+        "--no-deps",
+        "--reinstall",
+        "dist/capprune-0.1.0-py3-none-any.whl"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg"
+      },
+      "duration_seconds": 0.07244449993595481,
+      "summary": "Using Python 3.12.2 environment at: .verify-venv\nResolved 1 package in 5ms\nPrepared 1 package in 4ms\nUninstalled 1 package in 0.84ms\nInstalled 1 package in 2ms\n - capprune==0.1.0 (from file://<PROJECT>)\n + capprune==0.1.0 (from file://<PROJECT>/dist/capprune-0.1.0-py3-none-any.whl)\n",
+      "log": "results/acceptance/wheel_install.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "clean_demo",
+      "command": [
+        ".verify-venv/bin/python",
+        "-m",
+        "capprune",
+        "demo"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "environment_overrides": {
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MPLBACKEND": "Agg"
+      },
+      "duration_seconds": 4.787878458970226,
+      "summary": "157092,\n      0.9184908322959815,\n      0.9182483011969137,\n      0.9148311836619204,\n      0.9141424951532751,\n      0.9140839968747461,\n      0.9124049709934494\n    ],\n    [\n      0.9212920815657615,\n      0.9159943785176778,\n      0.9140651904242614,\n      0.9038214407971012,\n      0.900353562271304,\n      0.8992892678554405,\n      0.898478758831692,\n      0.8934160351589631,\n      0.8908178609942096,\n      0.8903010570626532\n    ],\n    [\n      0.9229262705206444,\n      0.9180246857777574,\n      0.9176659172914516,\n      0.9167007873032802,\n      0.916049885819087,\n      0.9134244150463366,\n      0.9113423495829832,\n      0.9106969973464676,\n      0.9106526581097509,\n      0.9103182714585137\n    ],\n    [\n      0.9160449578908892,\n      0.9158024508836751,\n      0.9069917022991745,\n      0.9064388050903043,\n      0.901772912248662,\n      0.9006884526846102,\n      0.8981342884995209,\n      0.8981269229089266,\n      0.8913939884329829,\n      0.889362946439356\n    ],\n    [\n      0.9034906427870384,\n      0.9030969361487289,\n      0.8903176382669502,\n      0.8883685650307642,\n      0.8871541286513005,\n      0.8860428947725106,\n      0.8851745206131546,\n      0.8839334587908465,\n      0.8834106797132901,\n      0.8807290619997639\n    ],\n    [\n      0.8919950501882621,\n      0.8869597022072409,\n      0.8793634999918012,\n      0.8717940285144893,\n      0.8654796757141752,\n      0.860264974825893,\n      0.8594747050831474,\n      0.8589728628852487,\n      0.8566477805591541,\n      0.8488982570828826\n    ],\n    [\n      0.8912117209881883,\n      0.8889627683595251,\n      0.8764155599123996,\n      0.8703848483684224,\n      0.8692064579508563,\n      0.8690925920928027,\n      0.8687647044542299,\n      0.8675206262554785,\n      0.8673176550119335,\n      0.863900957670654\n    ]\n  ]\n}\n",
+      "log": "results/acceptance/clean_demo.log",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "docker_build_and_run",
+      "command": [
+        "docker build -t capprune:local .",
+        "docker run --rm capprune:local"
+      ],
+      "status": "not_run",
+      "reason": "Docker executable absent / Docker 未安装",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "remote_ci",
+      "command": [],
+      "status": "not_run",
+      "reason": "No external push or publication / 未推送或公开发布",
+      "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e"
+    },
+    {
+      "name": "official_benchmark_run",
+      "command": [
+        ".venv/bin/python",
+        "benchmark.py",
+        "--output",
+        "results/reference.json"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "summary": "7 cases; 5880 valid samples; all ordered IDs and score tolerances passed",
+      "log": "results/reference.json",
+      "source_sha256": "cd50eb987f9d56f1a1e778a5b41127097aeb0115ccb52787ec05c862aec8c530",
+      "git_revision": "0f8260de8bd9de459de4d5f63cd86fb81cf08aca",
+      "started_at": "2026-09-21T12:20:21.157225+00:00",
+      "finished_at": "2026-09-21T12:20:31.138783+00:00"
+    }
+  ],
+  "final_source": {
+    "git_revision": "94645a27e07281146516b0ec58ddcb4946f6ed72",
+    "source_sha256": "9a560dd170d77ecc1da5540d6774a26d4aacbb8fa6bf92638e4e185cbb6cfe7e",
+    "files": {
+      "benchmark.py": "0a2666350157dd2a6b9f40c2b0e5cf060488dcaf0e172879911d00c55c270032",
+      "configs/protocol.json": "37051f3d41600e4a67b4ee0c06f1eba2fd4ae4fa1d9a49b30bb4aa081a709acc",
+      "pyproject.toml": "035c976bca82a16585c661cea3378a0d68b263456690992e93588655cf39ce1e",
+      "scripts/analyze.py": "2bc54a802216812be88b417591516eb9920c35548346ced07685cabb51070c4d",
+      "scripts/audit.py": "ad0b488f040d42a3a59df309c02f3ec02bf816a9deeb1949c7b922d00db0d281",
+      "scripts/check_docs.py": "2ba2163f2fc747af00336d0c25a89cafdf088256de309bf9df81cf44186315c1",
+      "scripts/evidence.py": "c1e50bf560713bf95feda81ce9b38ec059b0c21bff8bf14c926de838ad392105",
+      "scripts/validate_results.py": "89361daf46436390c8598980ac9ae4571c9df13be22ac1d33d6ac355ceef791e",
+      "scripts/verify.py": "81fc1885e9e1e681b1db4b798c8f7653b1bd6f02e652f643bb865380e90e8edb",
+      "src/capprune/__init__.py": "85fe786b69b14920e6588beac5bd546b1a8376218972358f6939b0b648b91482",
+      "src/capprune/__main__.py": "18e07a3759ef17ed219358348833ca1f5642833db9b9a05f664197b8db74fae0",
+      "src/capprune/cli.py": "92ad9b3fa4570471d20b908aab9acdf9e200252aacd221169e6b4f0067e22b71",
+      "src/capprune/index.py": "ab0afbaa8ee3d63efc43266b8bee249c00514a41ee8fe19f53088d3ebb850aad",
+      "tests/test_benchmark.py": "a87cb02757441ba88e90569b3c30bf2aa18e9f5d426060db4f87cb667f9a0730",
+      "tests/test_cli.py": "58e11a7b04005a8eb47fab09aa33b2730a4dd83d5eb8db57882858ec00e04ed6",
+      "tests/test_core.py": "7e2bfb3626c76781fad87d47296bbe4ddc1adbbb8c1f83213f64e4c800768726",
+      "uv.lock": "4c2b81039fa0d0abc4cda1f125187d3f7c670b9210463da1d4f671f7b5aa2042"
+    }
+  },
+  "status": "passed_with_unexecuted_external_checks",
+  "test_totals": {
+    "passed": 70,
+    "failed": 0,
+    "skipped": 0
+  },
+  "notes": [
+    "Initial documentation check ran before paired experiment/resume files existed; its failed attempt is preserved and current links/examples passed.",
+    "Postbenchmark changes affect documents, packaging exclusions and acceptance tooling; tested algorithm, benchmark, protocol and lock hashes remain unchanged.",
+    "Final wheel SHA256 matches the wheel installed and demonstrated in the clean environment."
+  ]
+}

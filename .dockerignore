@@ -1,0 +1,13 @@
+.git
+.venv
+.verify-venv
+work
+results
+__pycache__
+.pytest_cache
+.mypy_cache
+.ruff_cache
+dist
+*.egg-info
+.DS_Store
+.bootstrap/

@@ -1,0 +1,11 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.2, pytest-8.4.2, pluggy-1.6.0
+rootdir: <PROJECT>
+configfile: pyproject.toml
+collected 21 items
+
+tests/test_cli.py .................                                      [ 80%]
+tests/test_benchmark.py ....                                             [100%]
+
+- generated xml file: <PROJECT>/results/acceptance/integration.xml -
+============================== 21 passed in 5.30s ==============================

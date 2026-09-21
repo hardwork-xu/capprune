@@ -1,0 +1,37 @@
+{
+  "inspection_date": "2026-09-21",
+  "workspace_initial_state": "empty; no Git repository or inherited AGENTS.md found",
+  "os": "macOS 26.6.2 (Darwin 25.6.0)",
+  "architecture": "arm64",
+  "cpu": "Apple M1 Pro",
+  "cpu_logical_cores": 10,
+  "physical_memory_bytes": 17179869184,
+  "free_disk_gib_approx": 229,
+  "python": "3.12.2",
+  "compiler": "Apple clang 21.0.0",
+  "tools_present": [
+    "git",
+    "make",
+    "clang",
+    "xcrun",
+    "python3"
+  ],
+  "tools_absent": [
+    "docker",
+    "cmake",
+    "uv before project bootstrap"
+  ],
+  "gpu_observed": "Apple M1 Pro integrated GPU, 14 cores, Metal 4 reported by system_profiler",
+  "gpu_runtime_tested": false,
+  "backend_used": "NumPy float64 CPU / Apple Accelerate; VECLIB_MAXIMUM_THREADS=1 requested, actual Accelerate thread count not directly introspectable",
+  "docker": {
+    "status": "not_run",
+    "reason": "docker command not found"
+  },
+  "network": {
+    "pypi": "HTTP 200; isolated dependency installation succeeded",
+    "primary_sources": "public paper and official documentation accessed through web research tools",
+    "model_host_probe": "HTTPS connection reset from huggingface.co; no model required or downloaded"
+  },
+  "privacy": "No hostnames, credentials, account identities, home paths or device serial numbers recorded. Local Git metadata kept separately from public source."
+}

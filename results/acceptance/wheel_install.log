@@ -1,0 +1,7 @@
+Using Python 3.12.2 environment at: .verify-venv
+Resolved 1 package in 5ms
+Prepared 1 package in 4ms
+Uninstalled 1 package in 0.84ms
+Installed 1 package in 2ms
+ - capprune==0.1.0 (from file://<PROJECT>)
+ + capprune==0.1.0 (from file://<PROJECT>/dist/capprune-0.1.0-py3-none-any.whl)

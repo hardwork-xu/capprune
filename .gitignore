@@ -1,0 +1,15 @@
+.venv/
+.verify-venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/
+work/
+*.egg-info/
+.DS_Store
+.bootstrap/
+.git
+*.npy
+*.npz

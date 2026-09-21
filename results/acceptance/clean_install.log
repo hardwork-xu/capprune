@@ -1,0 +1,6 @@
+Using CPython 3.12.2 interpreter at: <PYTHON_RUNTIME>
+Creating virtual environment at: .verify-venv
+Installed 3 packages in 20ms
+ + capprune==0.1.0 (from file://<PROJECT>)
+ + numpy==2.2.6
+ + threadpoolctl==3.6.0
