@@ -1,10 +1,12 @@
-# CapPrune
+# 余弦相似度精确检索 · Exact Cosine Vector Search
+
+仓库原名 `capprune`；包名及现有命令保持不变（`capprune`）。
 
 **通过可审阅的球冠分块剪枝实现精确余弦向量检索。**
 
-[English](README.md) · [GitHub](https://github.com/hardwork-xu/capprune) · [CI 运行](https://github.com/hardwork-xu/capprune/actions)
+[English](README.md) · [GitHub](https://github.com/hardwork-xu/cosine-vector-search) · [CI 运行](https://github.com/hardwork-xu/cosine-vector-search/actions)
 
-[![CI](https://github.com/hardwork-xu/capprune/actions/workflows/ci.yml/badge.svg)](https://github.com/hardwork-xu/capprune/actions/workflows/ci.yml)
+[![CI](https://github.com/hardwork-xu/cosine-vector-search/actions/workflows/ci.yml/badge.svg)](https://github.com/hardwork-xu/cosine-vector-search/actions/workflows/ci.yml)
 ![License MIT](https://img.shields.io/badge/license-MIT-blue)
 ![Python 3.12](https://img.shields.io/badge/Python-3.12-blue)
 
@@ -16,7 +18,7 @@
 
 ## 范围与状态
 
-已在 macOS 26.6.2 arm64、Apple M1 Pro、16 GiB、Python 3.12.2、NumPy 2.2.6 / Accelerate 上验证三条搜索路径（`scan`、`blocked`、`pruned`）、API、双语 CLI、离线演示、原子保存与重载、70 项测试及包安装。[Ubuntu 24.04 的 GitHub Actions](https://github.com/hardwork-xu/capprune/actions/runs/35602650743) 也通过了相同的 70 项测试、静态/类型检查、包构建、基准冒烟测试、图表生成及 Docker 构建和运行。声明支持的 Python 范围为 3.12。完整性能测量仍仅来自 macOS，CI 冒烟测试不是 Linux 性能结论。详见[公开发布证据](results/publication.json)。不提供 GPU 后端、在线更新、稀疏向量、嵌入模型或服务层。
+已在 macOS 26.6.2 arm64、Apple M1 Pro、16 GiB、Python 3.12.2、NumPy 2.2.6 / Accelerate 上验证三条搜索路径（`scan`、`blocked`、`pruned`）、API、双语 CLI、离线演示、原子保存与重载、70 项测试及包安装。[Ubuntu 24.04 的 GitHub Actions](https://github.com/hardwork-xu/cosine-vector-search/actions/runs/35602650743) 也通过了相同的 70 项测试、静态/类型检查、包构建、基准冒烟测试、图表生成及 Docker 构建和运行。声明支持的 Python 范围为 3.12。完整性能测量仍仅来自 macOS，CI 冒烟测试不是 Linux 性能结论。详见[公开发布证据](results/publication.json)。不提供 GPU 后端、在线更新、稀疏向量、嵌入模型或服务层。
 
 算法在实数算术下精确；float64 实现通过保守余量保护，并与扫描基线核对。这不是针对所有对抗性输入及 BLAS 实现的形式化区间算术认证。计算分数相同时，按原始行 ID 升序排列。
 
@@ -44,8 +46,8 @@ flowchart LR
 克隆公开仓库后，在仓库根目录使用 Python 3.12 执行。引导环境和项目环境均为本地隔离环境，不需要全局安装包。首次需要下载依赖，此后默认测试与演示可以离线运行。
 
 ```sh
-git clone https://github.com/hardwork-xu/capprune.git
-cd capprune
+git clone https://github.com/hardwork-xu/cosine-vector-search.git
+cd cosine-vector-search
 python3.12 -m venv .bootstrap
 .bootstrap/bin/python -m pip install uv==0.8.22
 .bootstrap/bin/uv sync --frozen
@@ -111,7 +113,7 @@ CLI 接受自己的有限、非零、稠密 `.npy` 数组，每行一个向量�
 
 我希望长期把项目集中在可理解的检索机制和可复现证据上。后续修改应保留已冻结结果，并说明工作负载或假设的变化。[AGENTS.md](AGENTS.md)记录仓库约定，[贡献指南](CONTRIBUTING_zh.md)和[安全说明](SECURITY_zh.md)覆盖维护方式及输入限制。
 
-代码采用 [MIT 许可证](LICENSE)。第三方依赖与真实手写数字数据集保留各自许可证及归属，见 [NOTICE_zh.md](NOTICE_zh.md)。引用时使用“CapPrune: auditable exact cosine search, version 0.1.0”并附使用的源码 revision。公开源码仓库为 [hardwork-xu/capprune](https://github.com/hardwork-xu/capprune)。本项目没有宣称已分配 DOI、发布到软件包平台、创建托管 GitHub release 或部署公网服务。由于尚未确认完整的公开作者元数据，未生成 `CITATION.cff`。
+代码采用 [MIT 许可证](LICENSE)。第三方依赖与真实手写数字数据集保留各自许可证及归属，见 [NOTICE_zh.md](NOTICE_zh.md)。引用时使用“CapPrune: auditable exact cosine search, version 0.1.0”并附使用的源码 revision。公开源码仓库为 [hardwork-xu/cosine-vector-search](https://github.com/hardwork-xu/cosine-vector-search)。本项目没有宣称已分配 DOI、发布到软件包平台、创建托管 GitHub release 或部署公网服务。由于尚未确认完整的公开作者元数据，未生成 `CITATION.cff`。
 
 公开历史从经过脱敏的源码快照开始。[开发记录](docs/zh/DEVELOPMENT.md)及实验记录中的原始本地提交 ID 作为来源证据保留，不是此公开远端上可访问的提交。原始证据中的逐文件 SHA-256 可用于核验数值核心与冻结协议和实测源码一致。公开仓库排除私人本地 Git 身份元数据。
 

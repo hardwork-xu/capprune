@@ -2,15 +2,15 @@
 
 [English](../en/RELEASE.md) · [主页](../../README_zh.md) · [第三方声明](../../NOTICE_zh.md)
 
-我将 CapPrune 整理为可持续维护、可公开分享、证据边界明确的源码项目。公开源码仓库为 [hardwork-xu/capprune](https://github.com/hardwork-xu/capprune)。以下 0.1.0 发布说明仍是草稿；公开源码不代表已经创建托管 GitHub release、发布到软件包平台或提供托管服务。
+我将 CapPrune 整理为可持续维护、可公开分享、证据边界明确的源码项目。公开源码仓库为 [hardwork-xu/cosine-vector-search](https://github.com/hardwork-xu/cosine-vector-search)。以下 0.1.0 发布说明仍是草稿；公开源码不代表已经创建托管 GitHub release、发布到软件包平台或提供托管服务。
 
 ## 安装与演示
 
 使用 Python 3.12 和 uv 0.8.22。本地验证平台为 macOS arm64 CPU。克隆仓库并执行：
 
 ```sh
-git clone https://github.com/hardwork-xu/capprune.git
-cd capprune
+git clone https://github.com/hardwork-xu/cosine-vector-search.git
+cd cosine-vector-search
 uv sync --frozen
 make demo
 make check
@@ -30,7 +30,7 @@ docker build -t capprune:0.1.0 .
 docker run --rm capprune:0.1.0
 ```
 
-原始 macOS 主机没有 Docker，其本地验收档案保持不变。[公开 Ubuntu 24.04 CI](https://github.com/hardwork-xu/capprune/actions/runs/35602650743) 现已通过全部 70 项测试、静态/类型检查、包构建、基准冒烟、绘图，以及 Docker 构建和容器演示。[公开发布证据](../../results/publication.json)记录被验证的公开源码快照。这证明 Linux 执行路径可运行，不是完整 Linux 性能基准结论。
+原始 macOS 主机没有 Docker，其本地验收档案保持不变。[公开 Ubuntu 24.04 CI](https://github.com/hardwork-xu/cosine-vector-search/actions/runs/35602650743) 现已通过全部 70 项测试、静态/类型检查、包构建、基准冒烟、绘图，以及 Docker 构建和容器演示。[公开发布证据](../../results/publication.json)记录被验证的公开源码快照。这证明 Linux 执行路径可运行，不是完整 Linux 性能基准结论。
 
 ## 发布说明草稿
 
@@ -56,4 +56,4 @@ macOS 基准在导入 NumPy 前通过 `VECLIB_MAXIMUM_THREADS=1` 请求一个 Ac
 
 公开仓库在已核验的公开账户 `hardwork-xu` 下，从经过脱敏的源码快照开始。原始本地历史独立保留，没有改写或推送。开发记录、基准和验收文件中的本地提交 ID 仍作为历史来源证据保留，不能在公开远端解析。逐文件 SHA-256 保留公开数值核心与实测实现之间的对应关系。发布配套文件可能发生变化，不会因此改写原始基准。
 
-公开 GitHub 仓库已创建。首次 CI 执行情况需要在 [Actions](https://github.com/hardwork-xu/capprune/actions) 核验；归档的本地验收文件不是远端 CI 报告。软件包平台发布、托管 GitHub release、DOI 分配和服务部署仍未执行。发布或验证后续修改时，应保留原始实验记录。
+公开 GitHub 仓库已创建。首次 CI 执行情况需要在 [Actions](https://github.com/hardwork-xu/cosine-vector-search/actions) 核验；归档的本地验收文件不是远端 CI 报告。软件包平台发布、托管 GitHub release、DOI 分配和服务部署仍未执行。发布或验证后续修改时，应保留原始实验记录。

@@ -6,7 +6,7 @@ I keep this record to separate design decisions, actual fixes, and verified outc
 
 ## Recorded local history
 
-The following entries were read from `git log --format='%h %s'`. Commit hashes identify real original local history. The [public repository](https://github.com/hardwork-xu/capprune) starts separately with a sanitized source snapshot that excludes private Git identity metadata. The local hashes below and in raw evidence are preserved provenance references and cannot be resolved on the public remote; the original history was not rewritten or published. Per-file SHA-256 values in the raw evidence allow checking that the public numerical core and frozen protocol match the measured files.
+The following entries were read from `git log --format='%h %s'`. Commit hashes identify real original local history. The [public repository](https://github.com/hardwork-xu/cosine-vector-search) starts separately with a sanitized source snapshot that excludes private Git identity metadata. The local hashes below and in raw evidence are preserved provenance references and cannot be resolved on the public remote; the original history was not rewritten or published. Per-file SHA-256 values in the raw evidence allow checking that the public numerical core and frozen protocol match the measured files.
 
 | Commit | Actual summary | Completed work and verification at that stage |
 |---|---|---|
@@ -55,7 +55,7 @@ uv run python scripts/verify.py
 
 The final verifier records commands, exit statuses, sanitized logs, and a source snapshot in [checks.json](../../results/acceptance/checks.json). The source snapshot may differ from the earlier benchmark aggregate after supporting verification/documentation changes; per-file hashes permit checking whether the tested core and protocol changed. A result must not be relabeled as testing changed numerical code.
 
-In the archived local acceptance run, Docker build/run and remote GitHub Actions are **not run**: Docker was unavailable and source publication had not yet occurred. The public repository has since been created; current remote execution is recorded in [Actions](https://github.com/hardwork-xu/capprune/actions), independently of this historical file. Creating configuration files is not execution evidence. Package-registry publication, a hosted GitHub release and deployment remain unperformed, as documented in [RELEASE.md](RELEASE.md).
+In the archived local acceptance run, Docker build/run and remote GitHub Actions are **not run**: Docker was unavailable and source publication had not yet occurred. The public repository has since been created; current remote execution is recorded in [Actions](https://github.com/hardwork-xu/cosine-vector-search/actions), independently of this historical file. Creating configuration files is not execution evidence. Package-registry publication, a hosted GitHub release and deployment remain unperformed, as documented in [RELEASE.md](RELEASE.md).
 
 ## Source-archive privacy check
 
@@ -63,4 +63,4 @@ A local package-content audit found that the source distribution initially inclu
 
 ## Public source and CI verification
 
-Public snapshot `04ff43063be3cdc353bb0582444742da39be4f6d` passed [GitHub Actions](https://github.com/hardwork-xu/capprune/actions/runs/35602650743) on Ubuntu 24.04: 70 tests, static/type checks, wheel/sdist build, benchmark smoke, analysis and Docker build/run. Anonymous repository and README requests returned HTTP 200; README bytes matched that snapshot. The source was published with the verified account’s privacy-preserving commit identity; original private history was not pushed. [Machine-readable evidence](../../results/publication.json) supplements the unchanged historical local records.
+Public snapshot `04ff43063be3cdc353bb0582444742da39be4f6d` passed [GitHub Actions](https://github.com/hardwork-xu/cosine-vector-search/actions/runs/35602650743) on Ubuntu 24.04: 70 tests, static/type checks, wheel/sdist build, benchmark smoke, analysis and Docker build/run. Anonymous repository and README requests returned HTTP 200; README bytes matched that snapshot. The source was published with the verified account’s privacy-preserving commit identity; original private history was not pushed. [Machine-readable evidence](../../results/publication.json) supplements the unchanged historical local records.

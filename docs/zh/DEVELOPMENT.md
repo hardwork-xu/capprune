@@ -6,7 +6,7 @@
 
 ## 已记录的本地历史
 
-以下条目读取自 `git log --format='%h %s'`，哈希对应真实原始本地提交。[公开仓库](https://github.com/hardwork-xu/capprune) 的历史独立起始于经过脱敏的源码快照，排除私人 Git 身份元数据。下列及原始证据中的本地哈希作为来源引用保留，不能在公开远端解析；原始历史没有被改写或发布。原始证据中的逐文件 SHA-256 可用于检查公开数值核心与冻结协议和实测文件一致。
+以下条目读取自 `git log --format='%h %s'`，哈希对应真实原始本地提交。[公开仓库](https://github.com/hardwork-xu/cosine-vector-search) 的历史独立起始于经过脱敏的源码快照，排除私人 Git 身份元数据。下列及原始证据中的本地哈希作为来源引用保留，不能在公开远端解析；原始历史没有被改写或发布。原始证据中的逐文件 SHA-256 可用于检查公开数值核心与冻结协议和实测文件一致。
 
 | 提交 | 实际摘要 | 该阶段完成的工作与验证 |
 |---|---|---|
@@ -55,7 +55,7 @@ uv run python scripts/verify.py
 
 最终验证器将命令、退出状态、脱敏日志和源码快照写入 [checks.json](../../results/acceptance/checks.json)。后续验证支持文件或文档变化可能使源码快照与较早基准聚合哈希不同，逐文件哈希可用于核验核心和协议是否改变。不得把旧结果重新标记为修改后数值代码的测试结果。
 
-归档的本地验收中，Docker 构建/运行和远端 GitHub Actions 均为 **not run**：当时 Docker 不可用，源码也尚未公开。此后公开仓库已创建，当前远端执行记录见 [Actions](https://github.com/hardwork-xu/capprune/actions)，与该历史文件分别记录。创建配置文件不等于执行证据。软件包平台发布、托管 GitHub release 和部署仍未执行，见 [RELEASE.md](RELEASE.md)。
+归档的本地验收中，Docker 构建/运行和远端 GitHub Actions 均为 **not run**：当时 Docker 不可用，源码也尚未公开。此后公开仓库已创建，当前远端执行记录见 [Actions](https://github.com/hardwork-xu/cosine-vector-search/actions)，与该历史文件分别记录。创建配置文件不等于执行证据。软件包平台发布、托管 GitHub release 和部署仍未执行，见 [RELEASE.md](RELEASE.md)。
 
 ## 源码包隐私检查
 
@@ -63,4 +63,4 @@ uv run python scripts/verify.py
 
 ## 公开源码与 CI 验证
 
-公开快照 `04ff43063be3cdc353bb0582444742da39be4f6d` 在 Ubuntu 24.04 的 [GitHub Actions](https://github.com/hardwork-xu/capprune/actions/runs/35602650743) 中通过 70 项测试、静态/类型检查、wheel/源码包构建、基准冒烟、分析及 Docker 构建和运行。仓库与 README 的匿名请求均返回 HTTP 200，README 字节与该快照一致。公开提交使用已核验账号的隐私提交身份，没有推送原始私人历史。[机器可读证据](../../results/publication.json)补充说明此次发布，原始本地记录保持不变。
+公开快照 `04ff43063be3cdc353bb0582444742da39be4f6d` 在 Ubuntu 24.04 的 [GitHub Actions](https://github.com/hardwork-xu/cosine-vector-search/actions/runs/35602650743) 中通过 70 项测试、静态/类型检查、wheel/源码包构建、基准冒烟、分析及 Docker 构建和运行。仓库与 README 的匿名请求均返回 HTTP 200，README 字节与该快照一致。公开提交使用已核验账号的隐私提交身份，没有推送原始私人历史。[机器可读证据](../../results/publication.json)补充说明此次发布，原始本地记录保持不变。

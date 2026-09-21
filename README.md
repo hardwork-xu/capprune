@@ -1,10 +1,12 @@
-# CapPrune
+# Exact Cosine Vector Search
+
+Previously `capprune`. Package and command names remain unchanged (`capprune`).
 
 **Exact cosine search with auditable spherical-cap block pruning.**
 
-[简体中文](README_zh.md) · [GitHub](https://github.com/hardwork-xu/capprune) · [CI runs](https://github.com/hardwork-xu/capprune/actions)
+[简体中文](README_zh.md) · [GitHub](https://github.com/hardwork-xu/cosine-vector-search) · [CI runs](https://github.com/hardwork-xu/cosine-vector-search/actions)
 
-[![CI](https://github.com/hardwork-xu/capprune/actions/workflows/ci.yml/badge.svg)](https://github.com/hardwork-xu/capprune/actions/workflows/ci.yml)
+[![CI](https://github.com/hardwork-xu/cosine-vector-search/actions/workflows/ci.yml/badge.svg)](https://github.com/hardwork-xu/cosine-vector-search/actions/workflows/ci.yml)
 ![License MIT](https://img.shields.io/badge/license-MIT-blue)
 ![Python 3.12](https://img.shields.io/badge/Python-3.12-blue)
 
@@ -16,7 +18,7 @@ The contribution is a complete CPU implementation of block construction, conserv
 
 ## Scope and status
 
-Validated locally on macOS 26.6.2 arm64, Apple M1 Pro, 16 GiB, Python 3.12.2, NumPy 2.2.6 / Accelerate: all three search paths (`scan`, `blocked`, `pruned`), API, bilingual CLI, offline demo, atomic save/reload, 70 tests and package installation. [GitHub Actions on Ubuntu 24.04](https://github.com/hardwork-xu/capprune/actions/runs/35602650743) also passed the same 70-test suite, static/type checks, package build, benchmark smoke, plot generation, and Docker build/run. Python 3.12 is the declared version range. Full performance measurements remain macOS-only; CI smoke is not a Linux performance claim. See [publication evidence](results/publication.json). No GPU backend, online updates, sparse vectors, embedding model or service is provided.
+Validated locally on macOS 26.6.2 arm64, Apple M1 Pro, 16 GiB, Python 3.12.2, NumPy 2.2.6 / Accelerate: all three search paths (`scan`, `blocked`, `pruned`), API, bilingual CLI, offline demo, atomic save/reload, 70 tests and package installation. [GitHub Actions on Ubuntu 24.04](https://github.com/hardwork-xu/cosine-vector-search/actions/runs/35602650743) also passed the same 70-test suite, static/type checks, package build, benchmark smoke, plot generation, and Docker build/run. Python 3.12 is the declared version range. Full performance measurements remain macOS-only; CI smoke is not a Linux performance claim. See [publication evidence](results/publication.json). No GPU backend, online updates, sparse vectors, embedding model or service is provided.
 
 The algorithm is exact in real arithmetic; guarded float64 output is checked against the scan baseline. This is not a formal interval-arithmetic certification for every adversarial input or BLAS implementation. Equal computed scores use ascending original row ID.
 
@@ -44,8 +46,8 @@ The index deliberately keeps original and packed float64 layouts: vector payload
 Clone the public repository, then run from its root with Python 3.12. The bootstrap and project environments are local; no global package installation is required. An initial dependency download is required; default tests and demos subsequently work offline.
 
 ```sh
-git clone https://github.com/hardwork-xu/capprune.git
-cd capprune
+git clone https://github.com/hardwork-xu/cosine-vector-search.git
+cd cosine-vector-search
 python3.12 -m venv .bootstrap
 .bootstrap/bin/python -m pip install uv==0.8.22
 .bootstrap/bin/uv sync --frozen
@@ -111,7 +113,7 @@ Tables and plots are generated from [all raw samples](results/reference.json) by
 
 I intend to keep this project focused on understandable search mechanisms and reproducible evidence. Subsequent changes should preserve the frozen results and state when a workload or assumption changes. [AGENTS.md](AGENTS.md) records repository rules; [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md) cover maintenance and input limits.
 
-Code is [MIT licensed](LICENSE). Third-party dependencies and the real digits dataset retain their own licenses and attribution in [NOTICE.md](NOTICE.md). Cite “CapPrune: auditable exact cosine search, version 0.1.0” and the source revision used. The public source repository is [hardwork-xu/capprune](https://github.com/hardwork-xu/capprune). No DOI, package-registry publication, hosted GitHub release or public service is claimed. `CITATION.cff` is omitted because full public author metadata has not been established.
+Code is [MIT licensed](LICENSE). Third-party dependencies and the real digits dataset retain their own licenses and attribution in [NOTICE.md](NOTICE.md). Cite “CapPrune: auditable exact cosine search, version 0.1.0” and the source revision used. The public source repository is [hardwork-xu/cosine-vector-search](https://github.com/hardwork-xu/cosine-vector-search). No DOI, package-registry publication, hosted GitHub release or public service is claimed. `CITATION.cff` is omitted because full public author metadata has not been established.
 
 Public history starts with a sanitized source snapshot. The original local commit IDs in [development history](docs/en/DEVELOPMENT.md) and experiment records are preserved provenance references; they are not commits available on this public remote. Per-file SHA-256 values in the raw evidence allow verification that the numerical core and frozen protocol match the measured source. Private local Git identity metadata is excluded from the public repository.
 

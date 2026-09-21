@@ -2,15 +2,15 @@
 
 [简体中文](../zh/RELEASE.md) · [Home](../../README.md) · [Third-party notices](../../NOTICE.md)
 
-I am preparing CapPrune as a maintainable, publicly shareable source project with explicit evidence limits. The public source repository is [hardwork-xu/capprune](https://github.com/hardwork-xu/capprune). These version 0.1.0 release notes remain a draft; source publication does not imply a hosted GitHub release, package-registry publication or hosted service.
+I am preparing CapPrune as a maintainable, publicly shareable source project with explicit evidence limits. The public source repository is [hardwork-xu/cosine-vector-search](https://github.com/hardwork-xu/cosine-vector-search). These version 0.1.0 release notes remain a draft; source publication does not imply a hosted GitHub release, package-registry publication or hosted service.
 
 ## Installation and demonstration
 
 Use Python 3.12 and uv 0.8.22. The locally validated platform is macOS arm64 CPU. Clone the repository and run:
 
 ```sh
-git clone https://github.com/hardwork-xu/capprune.git
-cd capprune
+git clone https://github.com/hardwork-xu/cosine-vector-search.git
+cd cosine-vector-search
 uv sync --frozen
 make demo
 make check
@@ -30,7 +30,7 @@ docker build -t capprune:0.1.0 .
 docker run --rm capprune:0.1.0
 ```
 
-The original macOS host had no Docker, so its archived local acceptance record remains unchanged. [Public Ubuntu 24.04 CI](https://github.com/hardwork-xu/capprune/actions/runs/35602650743) has now passed all 70 tests, static/type checks, package build, benchmark smoke, plotting, Docker build and container demo. [Publication evidence](../../results/publication.json) records the tested public snapshot. This validates the Linux execution path, not full Linux benchmark performance.
+The original macOS host had no Docker, so its archived local acceptance record remains unchanged. [Public Ubuntu 24.04 CI](https://github.com/hardwork-xu/cosine-vector-search/actions/runs/35602650743) has now passed all 70 tests, static/type checks, package build, benchmark smoke, plotting, Docker build and container demo. [Publication evidence](../../results/publication.json) records the tested public snapshot. This validates the Linux execution path, not full Linux benchmark performance.
 
 ## Release notes draft
 
@@ -48,7 +48,7 @@ The macOS benchmark requests one Accelerate thread through `VECLIB_MAXIMUM_THREA
 
 **Suggested Topics:** `vector-search`, `cosine-similarity`, `branch-and-bound`, `numpy`, `cpu`, `benchmark`, `reproducible-research`, `python`.
 
-**Descriptive citation:** CapPrune: exact cosine retrieval with spherical-cap block pruning, version 0.1.0 (2026), software. Record the source revision or artifact hash used. Include the public repository URL: https://github.com/hardwork-xu/capprune. No DOI has been assigned. A descriptive citation is provided without adding personal author metadata; no `CITATION.cff` is supplied.
+**Descriptive citation:** CapPrune: exact cosine retrieval with spherical-cap block pruning, version 0.1.0 (2026), software. Record the source revision or artifact hash used. Include the public repository URL: https://github.com/hardwork-xu/cosine-vector-search. No DOI has been assigned. A descriptive citation is provided without adding personal author metadata; no `CITATION.cff` is supplied.
 
 ## Artifact and publication boundary
 
@@ -56,4 +56,4 @@ The publication-ready source bundle must contain project-owned source, tests, co
 
 The public repository starts with a sanitized source snapshot under the verified public account `hardwork-xu`. Original local history remains separate and is not rewritten or pushed. Local commit IDs in the development record, benchmark and acceptance files remain historical provenance references; they cannot be resolved on the public remote. Per-file SHA-256 values preserve the connection between the published numerical core and the measured implementation. Supporting publication files may differ without changing the original benchmark.
 
-The public GitHub repository has been created. Public CI passed as recorded above; [Actions](https://github.com/hardwork-xu/capprune/actions) reports later runs. The archived local acceptance file is not a remote CI report. Package-registry publication, a hosted GitHub release, DOI assignment and service deployment remain unperformed. Preserve the original experiment records when publishing or validating later changes.
+The public GitHub repository has been created. Public CI passed as recorded above; [Actions](https://github.com/hardwork-xu/cosine-vector-search/actions) reports later runs. The archived local acceptance file is not a remote CI report. Package-registry publication, a hosted GitHub release, DOI assignment and service deployment remain unperformed. Preserve the original experiment records when publishing or validating later changes.
